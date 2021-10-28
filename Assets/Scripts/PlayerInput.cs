@@ -25,6 +25,7 @@ public class PlayerInput : MonoBehaviour {
             reload = false;
             return;
         }
+       
 
         // move에 관한 입력 감지
         move = Input.GetAxis(moveAxisName);
