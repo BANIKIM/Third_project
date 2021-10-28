@@ -108,7 +108,7 @@ public class Gun : MonoBehaviour {
 
         // 남은 탄알 수를 -1
         magAmmo--;
-        if (magAmmo <=0){
+        if (magAmmo ==0){
             //탄창에 남은 탄알이 없다면 총의 현재 상태를 Empty로 갱신
             state = State.Empty;
         }
@@ -143,7 +143,7 @@ public class Gun : MonoBehaviour {
     // 재장전 시도
     public bool Reload() {
 
-        if ( state == State.Reloading || ammoRemain <= 0 || magAmmo >= magCapacity){
+        if ( state == State.Reloading || ammoRemain == 0 || magAmmo >= magCapacity){
             // 이미 재장전 중이거나 남은 탄알이 없거나
             // 탄창에 탄알이 이미 가득한 경우 재장전할 수 없음
 
@@ -166,7 +166,8 @@ public class Gun : MonoBehaviour {
         yield return new WaitForSeconds(reloadTime);
 
         // 탄창에 채울 탄알을 계산
-        int ammoToFill = magCapacity = magAmmo;
+        int ammoToFill = magCapacity - magAmmo;
+        //int ammoToFill = magCapacity;
 
         // 탄창에 채워야 할 탄알이 남은 탄알보다 많다면
         // 채워야 할 탄알 수를 남은 탄알 수에 맞춰 줄임

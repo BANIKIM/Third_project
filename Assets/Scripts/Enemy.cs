@@ -146,7 +146,7 @@ public class Enemy : LivingEntity {
         for (int i = 0; i < enemyColliders.Length; i++){
             enemyColliders[i].enabled = false;
         }
-
+    
         // AI 추적을 중지하고 내비메시 컴포넌트 비활성화
         pathFinder.isStopped = true;
         pathFinder.enabled = false;
