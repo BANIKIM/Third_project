@@ -1570,7 +1570,7 @@ MonoBehaviour:
   magCapacity: 25
   magAmmo: 0
   timeBetFire: 0.12
-  reloadTime: 1.8
+  reloadTime: 1.2
 --- !u!82 &1473526281
 AudioSource:
   m_ObjectHideFlags: 0
